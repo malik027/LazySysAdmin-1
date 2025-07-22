@@ -45,7 +45,7 @@ nikto -h 192.168.0.107
 
 ![Screenshot](images/6.png)
 
-Quite interesting... Now let's run the math with the "whatweb" tool and see what we find.
+Quite interesting... Now let's run the math with the **[whatweb](https://github.com/urbanadventurer/WhatWeb)** tool and see what we find.
 ```
 whatweb http://192.168.0.107
 ```
@@ -103,7 +103,7 @@ sudo -l
 
 ![Screenshot](images/16.png)
 
-Here it can be seen that all privileges mean user: run all commands using **sudo**, let's try it.
+Here, you can see that all privileges are granted to all users. This means any user can run any command using **sudo**. Let's try it out.
 
 ![Screenshot](images/14.png)
 
