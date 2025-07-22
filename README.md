@@ -41,14 +41,14 @@ The **dirsearch** results revealed many hidden directories. So now I want to enu
 nikto -h 192.168.0.107
 ```
 
-![Screenshot](images/5.png)
+![Screenshot](images/6.png)
 
 Quite interesting... Now let's run the math with the "whatweb" tool and see what we find.
 ```
 whatweb http://192.168.0.107
 ```
 
-![Screenshot](images/6.png)
+![Screenshot](images/5.png)
 
 It doesn't seem to be working. Let's move on to a tool like the **[gobuster](https://github.com/OJ/gobuster)** for more advanced enumeration.
 ```
