@@ -1,15 +1,15 @@
 # LazySysAdmin-1
 ## Overview :
-**[LazySysAdmin: 1](https://vulnhub.com/entry/lazysysadmin-1,205/)** is a CTF engine from VulnHub designed for beginners, with a real-world approach. The system is designed to look like it's being managed by a careless sysadmin with little regard for basic security. This leaves attackers open to common mistakes like open files, leaked credentials, or weak configurations.
+**[LazySysAdmin: 1](https://vulnhub.com/entry/lazysysadmin-1,205/)** is a CTF engine from **[VulnHub](https://vulnhub.com/)** designed for beginners, with a real-world approach. The system is designed to look like it's being managed by a careless sysadmin with little regard for basic security. This leaves attackers open to common mistakes like open files, leaked credentials, or weak configurations.
 
 ## Objective :
-The goal of CTF **[LazySysAdmin: 1](https://vulnhub.com/entry/lazysysadmin-1,205/)** is to gain full **(root)** access to a Linux-based system simulated as a server owned by a **"lazy"** system administrator. Through this scenario, participants are challenged to explore configuration weaknesses, exploit security vulnerabilities, and perform privilege escalation.
+The goal of CTF **[LazySysAdmin: 1](https://vulnhub.com/entry/lazysysadmin-1,205/)** is to gain full **root** access to a Linux-based system simulated as a server owned by a **"lazy"** system administrator. Through this scenario, participants are challenged to explore configuration weaknesses, exploit security vulnerabilities, and perform privilege escalation.
 - Basic enumeration of networks and services.
 - Utilization of public information (open directories, config files).
 - Exploiting user access to privilege escalation to root.
 
 ## The Hack :
-As usual, the first thing we do is find the target IP by scanning the machines on the network we are using, using tools like **NetDiscover** , **Angry IP** , etc. Here I am using **NetDiscover**, so let's get started.
+As usual, the first thing we do is find the target IP by scanning the machines on the network we are using, using tools like **netdiscover** , **Angry IP** , etc. Here I am using **netdiscover**, so let's get started.
 ```
 sudo netdiscover
 ```
