@@ -110,6 +110,6 @@ Here, you can see that all privileges are granted to all users. This means any u
 I had expected it when I finally reached the top...
 
 ## Conclusion :
-The LazySysAdmin CTF is a beginner-level engine designed to introduce basic techniques in enumeration and privilege escalation. This box depicts a classic scenario of a poorly managed system (lazy sysadmin), where default configurations and security oversights are exploited by an attacker to gain full access.
+The **[LazySysAdmin: 1](https://vulnhub.com/entry/lazysysadmin-1,205/)** CTF is a beginner-level engine designed to introduce basic techniques in enumeration and privilege escalation. This box depicts a classic scenario of a poorly managed system (lazy sysadmin), where default configurations and security oversights are exploited by an attacker to gain full access.
 
 ![gif](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2tmcGtqdW5xbmk5czVrbmptaGx3cWxyM3dpMjM4ZzU3NWxkYjE1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mQG644PY8O7rG/giphy.gif)
