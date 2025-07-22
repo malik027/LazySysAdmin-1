@@ -29,12 +29,14 @@ Yes, here are the results, many services are running here, as a consideration le
 
 As usual, it looks like an empty book, next I visit **/robots.txt**, there are some entries but I don't find anything, permission is denied, so now force the directory using a tool like **"dirsearch"**.
 
+![Screenshot](images/4.png)
+
 Why **dirseacrh**? because, dirsearch is a tool for directory bruteforcing so you can download and clone this tool by using this **[link](https://github.com/maurosoria/dirsearch)**
 ```
 dirsearch -u http://192.168.0.107
 ```
 
-![Screenshot](images/4.png)
+![Screenshot](images/5.png)
 
 The **dirsearch** results revealed many hidden directories. So now I want to enumerate these directories using Nikto and look for any vulnerabilities.
 ```
@@ -48,35 +50,35 @@ Quite interesting... Now let's run the math with the "whatweb" tool and see what
 whatweb http://192.168.0.107
 ```
 
-![Screenshot](images/5.png)
+![Screenshot](images/7.png)
 
 It doesn't seem to be working. Let's move on to a tool like the **[gobuster](https://github.com/OJ/gobuster)** for more advanced enumeration.
 ```
 gobuster dir -u 192.168.0.107 -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
 ```
 
-![Screenshot](images/7.png)
+![Screenshot](images/8.png)
 
 Yeah, it's the same. Next, let's try the **[wfuzz](https://github.com/xmendez/wfuzz)** tool. Maybe we'll get something.
 ```
 wfuzz -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt http://192.168.0.107/FUZZ
 ```
 
-![Screenshot](images/8.png)
+![Screenshot](images/9.png)
 
 It's still the same. I've searched on port 80, but it hasn't yielded any clues. I should try another port, like 445 or maybe 139. Let's check port 445 first, which is **[samba](https://www.samba.org/)** In this case, I'll use **[smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)** to get more information.
 ```
 smbclient -L 192.168.0.107
 ```
 
-![Screenshot](images/9.png)
+![Screenshot](images/10.png)
 
 Yappp... That's what we got, there is a **share$** directory, without further thought let's check further.
 ```
 smbclient //192.168.0.107/share$
 ```
 
-![Screenshot](images/10.png)
+![Screenshot](images/15.png)
 
 This is not bad, look there are several directories stored here, all the directories here are web directories, let's check the pages one by one.
 
@@ -99,11 +101,11 @@ Next let's try **sudo -l** to see the permissions on SUID.
 sudo -l
 ```
 
-![Screenshot](images/14.png)
+![Screenshot](images/16.png)
 
 Here it can be seen that all privileges mean user: run all commands using **sudo**, let's try it.
 
-![Screenshot](images/15.png)
+![Screenshot](images/14.png)
 
 I had expected it when I finally reached the top...
 
